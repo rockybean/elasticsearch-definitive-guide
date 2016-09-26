@@ -69,7 +69,7 @@ GET /my_index/blogpost/_search
 }
 ...
 --------------------------
-<1> 总共有4个 comment对象 ：1个对象在9月的桶里，3个对象在10月的桶里。
+<1> 总共有4个 `comments` 对象 ：1个对象在9月的桶里，3个对象在10月的桶里。
 
 [[reverse-nested-aggregation]]
 ==== 反嵌套聚合
