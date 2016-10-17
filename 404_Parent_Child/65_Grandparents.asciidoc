@@ -1,7 +1,7 @@
 [[grandparents]]
 === 祖辈与孙辈关系
 
-父子关系可以延展到更多代关系，比如生活中孙辈与祖辈的关系((("parent-child relationship", "grandparents and grandchildren")))((("grandparents and grandchildren")))，唯一的要求是满足这些关系的文档必须在同一个分片上被索引。
+父子关系可以延展到更多代关系，比如生活中孙辈与祖辈的关系((("parent-child relationship", "grandparents and grandchildren")))((("grandparents and grandchildren"))) -- 唯一的要求是满足这些关系的文档必须在同一个分片上被索引。
 
 
 让我们把上一个例子中的 `country` 类型设定为 `branch` 类型的父辈：
