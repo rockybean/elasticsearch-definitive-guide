@@ -1,7 +1,7 @@
 [[grandparents]]
 === 祖辈与孙辈关系
 
-父子关系可以延展到更多代关系，比如生活中孙辈与祖辈的关系((("parent-child relationship", "grandparents and grandchildren")))((("grandparents and grandchildren"))) -- 唯一的要求是满足这些关系的文档必须在同一个分片上被索引。
+父子关系可以延展到更多代关系，比如生活中孙辈与祖辈的关系((("parent-child relationship", "grandparents and grandchildren")))((("grandparents and grandchildren"))) &#x2014; 唯一的要求是满足这些关系的文档必须在同一个分片上被索引。
 
 
 让我们把上一个例子中的 `country` 类型设定为 `branch` 类型的父辈：
@@ -59,7 +59,7 @@ PUT /company/employee/1?parent=london
 }
 -------------------------
 
-employee 文档的路由依赖其父文档 ID ，也就是 `london` ；但是 `london` 文档的路由却依赖 _其本身的_ 父文档 ID ，也就是 `uk`。此种情况下，孙辈文档很有可能最终和父辈、祖辈文档不在同一分片上，导致不满足祖辈和孙辈文档必须在同一个分片上被索引的要求。
+employee 文档的路由依赖其父文档 ID &#x2014; 也就是 `london` &#x2014; 但是 `london` 文档的路由却依赖 _其本身的_ 父文档 ID &#x2014; 也就是 `uk` 。此种情况下，孙辈文档很有可能最终和父辈、祖辈文档不在同一分片上，导致不满足祖辈和孙辈文档必须在同一个分片上被索引的要求。
 
 解决方案是添加一个额外的 `routing` 参数，将其设置为祖辈的文档 ID ，以此来保证三代文档路由到同一个分片上。索引请求如下所示：
 
