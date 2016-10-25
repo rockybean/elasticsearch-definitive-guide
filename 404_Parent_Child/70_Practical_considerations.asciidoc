@@ -1,7 +1,7 @@
 [[parent-child-performance]]
 === 实际使用中的一些建议
 
-当文档索引性能远比查询性能重要((("parent-child relationship", "performance and")))的时候，父子关系是非常有用的，但是它也是有巨大代价的，其查询速度会比同等的嵌套查询慢5到10倍。
+当文档索引性能远比查询性能重要((("parent-child relationship", "performance and")))的时候，父子关系是非常有用的，但是它也是有巨大代价的。其查询速度会比同等的嵌套查询慢5到10倍!
 
 ==== 全局序号和延迟
 
@@ -43,7 +43,7 @@ PUT /company
 
 * 尽量少地使用父子关系，仅在子文档远多于父文档时使用。
 * 避免在一个查询中使用多个父子联合语句。
-* 在 has_child 查询中使用filter上下文，或者设置 score_mode 为 none 来避免计算文档得分。
-* 保证父ID尽量短，以便在 doc values 中更好地压缩，被临时载入时占用更少的内存。
+* 在 has_child 查询中使用 filter 上下文，或者设置 score_mode 为 none 来避免计算文档得分。
+* 保证父 IDs 尽量短，以便在 doc values 中更好地压缩，被临时载入时占用更少的内存。
 
 _最重要的是:_ 先考虑下我们之前讨论过的其他方式来达到父子关系的效果。
